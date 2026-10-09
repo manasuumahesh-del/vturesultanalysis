@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTU Results Extractor</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.15/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="assets/index.js"></script>
+    <script>
+        eel.expose(queue);
+        function queue(usn)
+        {
+            document.getElementById("starting").style.display = "none";
+            document.getElementById("queue").style.display = "block";
+            document.getElementById("queue-usn").textContent = usn.toUpperCase();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>VTU Results Extractor</h1>
+            <input class="entry" type="text" id="link" placeholder="Enter results link">
+            <input class="entry" id="usn" type="text" placeholder="Enter comma separated USNs">
+            <div class="row-min">
+                <input class="reval" type="checkbox" id="reval" name="reval">
+                <label for="reval">Is this revaluation result?</label>
+            </div>
+            <div class="row">
+                <button class="btn btn-1 btn-1e" id="extract" onclick="extract()">Extract</button>
+                <button class="btn btn-1 btn-1e" id="generate" onclick="generate()">Generate</button>
+                <button class="btn btn-1 btn-1e" id="truncate" onclick="truncate()">Clear Data</button>
+            </div>
+
+             <p id="starting" class="starting extract"></p>
+            <p id="queue" class="extract">Extracting USN : <span id="queue-usn"></span></p>
+
+            <p class="credits">For any issues, contact <span class="email"><a
+                        href="https://rijuthmenon.me">rir20cs@cmrit.ac.in</a></span></p>
+
+        </div>
+
+    </div>
+
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+</html>
